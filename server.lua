@@ -12,7 +12,5 @@ AddEventHandler("getPermissions", function(_source)
 		TriggerClientEvent("chat:clear", -1)
 	elseif not IsPlayerAceAllowed(_source, "ServerChatClear.cmds") then
 		TriggerClientEvent("NoPermissions", _source)
-	else
-		TriggerClientEvent("chatMessage", _source, "^1SYSTEM: Something went wrong, please make sure that everything is setted up properly")
 	end
 end)
