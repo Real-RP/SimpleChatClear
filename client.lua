@@ -28,6 +28,6 @@ AddEventHandler("NoPermissions", function()
 	if Config.UseMythicNotify == true then
 		exports['mythic_notify']:DoHudText('error', Config.NoPermissions)
 	else
-		TriggerEvent("chatMessage", "^1SERVER", {255, 255, 255}, Config.NoPermissions)
+		TriggerEvent('chat:addMessage', { args = { "^8^*"..Config.Author, Config.NoPermissions }, color = 0,0,0 })
 	end
 end)
