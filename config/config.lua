@@ -15,3 +15,5 @@ Config = {}
 
 	--chat author
 	Config.Author = "SYSTEM"
+	Config.ChatClientClear = "You have cleared your chat"
+	Config.ChatServerClear = "You have cleared the chat for everyone!"
