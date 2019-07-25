@@ -25,10 +25,12 @@ end
 
 RegisterNetEvent("NoPermissions")
 AddEventHandler("NoPermissions", function()
-	if Config.UseMythicNotify == true then
+	if Config.UseMythicNotify == true and Config.UsehbNotify == false then
 		exports['mythic_notify']:DoHudText('error', Config.NoPermissions)
-	elseif Config.UsehbNotify == true then
+	elseif Config.UsehbNotify == true and Config.UseMythicNotify == false then
 		TriggerEvent("hb_notifications:display", "top-middle", Config.NoPermissions, "rgb(252, 3, 3)" , 5000)
+	elseif Config.UsehbNotify == true and Config.UseMythicNotify == true then
+		TriggerEvent('chat:addMessage', { args = { "^8^*"..Config.Author, Config.Error_configs }, color = 0,0,0 })
 	else
 		TriggerEvent('chat:addMessage', { args = { "^8^*"..Config.Author, Config.NoPermissions }, color = 0,0,0 })
 	end
